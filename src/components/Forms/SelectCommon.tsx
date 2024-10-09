@@ -13,7 +13,7 @@ const SelectCommon: React.FC<SelectCommonProps> = ({ options }) => {
   return (
     <select className="bg-slate-200 text-black rounded p-2 w-full">
       {options.map((opt, index) => (
-        <option key={index} value={opt.label}>
+        <option key={index} value={opt.label} className="p-3">
           {opt.label}
         </option>
       ))}

@@ -5,9 +5,10 @@ import Loader from './common/Loader';
 import PageTitle from './components/PageTitle';
 import SignIn from './pages/Authentication/SignIn';
 import SignUp from './pages/Authentication/SignUp';
-import InstallTool from './pages/Dashboard/InstallTool';
+import ChatTool from './pages/Dashboard/ChatTool';
 import NotFound from './pages/NotFound';
 import ResetPassword from './pages/Authentication/ResetPassword';
+import BlockArticleTool from './pages/Dashboard/BlockArticle';
 function App() {
   const [loading, setLoading] = useState<boolean>(true);
   const { pathname } = useLocation();
@@ -26,19 +27,19 @@ function App() {
     <>
       <Routes>
         <Route
-          path="/auth/signin"
+          path="/auth/login"
           element={
             <>
-              <PageTitle title="Signin" />
+              <PageTitle title="ログイン" />
               <SignIn />
             </>
           }
         />
         <Route
-          path="/auth/signup"
+          path="/auth/registry"
           element={
             <>
-              <PageTitle title="Signup" />
+              <PageTitle title="新規登録" />
               <SignUp />
             </>
           }
@@ -46,15 +47,24 @@ function App() {
         <Route
           path="/"
           element={
-            <Navigate to="/tool" replace />
+            <Navigate to="/chattool" replace />
           }
         />
         <Route
-          path="/tool"
+          path="/chattool"
           element={
             <>
               <PageTitle title="インスタツール" />
-              <InstallTool />
+              <ChatTool title={'インスタツール'} />
+            </>
+          }
+        />
+        <Route
+          path="/blockArticle"
+          element={
+            <>
+              <PageTitle title="ブログ記事生成" />
+              <BlockArticleTool title={'ブログ記事生成'} />
             </>
           }
         />
@@ -80,5 +90,4 @@ function App() {
     </>
   );
 }
-
 export default App;

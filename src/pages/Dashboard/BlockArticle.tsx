@@ -1,11 +1,11 @@
 import React, { useState} from 'react';
-import Header from '../components/Header/index';
+import Header from "../../components/Header/index";
 
-interface DefaultLayoutProps {
+interface BlockArticleToolProps {
   title: String;
 }
 
-const DefaultLayout: React.FC<DefaultLayoutProps> = ({}) => {
+const BlockArticleTool: React.FC<BlockArticleToolProps> = ({}) => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   return (
@@ -14,7 +14,7 @@ const DefaultLayout: React.FC<DefaultLayoutProps> = ({}) => {
         <div className="relative flex flex-1 flex-col overflow-y-auto overflow-x-hidden">
           <Header sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
           <iframe
-            src="https://udify.app/chat/djzi7Ufg6X4zKwXp"
+            src="https://udify.app/chat/DoLj5ck0hcHURSVw"
             className = " h-full"
             allow="microphone">
         </iframe>
@@ -24,4 +24,4 @@ const DefaultLayout: React.FC<DefaultLayoutProps> = ({}) => {
   );
 };
 
-export default DefaultLayout;
+export default BlockArticleTool;
